@@ -1,0 +1,143 @@
+body {
+    width: 100%;
+    margin: auto;
+    font-family: 'Righteous', cursive;
+    background-color: rgb(166, 114, 190);
+}
+
+
+/************** -HEADER- ****************/
+
+header {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+
+/************** -WP-KLASSER- ****************/
+
+.aligncenter img {
+    display: block;
+    margin: auto;
+}
+
+.has-text-align-center {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
+/************** -STARTSIDA- ****************/
+
+.absolute-text {
+    z-index: 10;
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(19, 18, 18);
+    top: 40%;
+    left: 30%;
+    right: 30%;
+}
+
+.pulsate {
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+
+
+/************** -BUBBLOR- ****************/
+
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+        font-size: 1.8rem;
+    }
+    50% {
+        opacity: 1.0;
+        font-size: 1.85rem;
+    }
+    100% {
+        opacity: 0.5;
+        font-size: 1.8rem;
+    }
+}
+
+.bubble {
+    z-index: 1;
+    width: 40%;
+    height: 500px;
+    position: relative;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.bubble1 {
+    z-index: 2;
+    width: 50%;
+    height: 200px;
+    position: relative;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.bubble2 {
+    z-index: 3;
+    width: 62%;
+    height: 100px;
+    position: relative;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.bubble img,
+.bubble1 img,
+.bubble2 img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+@-webkit-keyframes example {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 900px;
+    }
+}
+
+
+/**************************************************
+******************************************SMALL SCREENS
+**************************************/
+
+@media only screen and (max-width: 800px) {
+    /************** -STARTSIDA- ****************/
+    .absolute-text {
+        font-size: 1rem;
+        top: 40%;
+        left: 10%;
+        right: 10%;
+    }
+    /************** -BUBBLOR- ****************/
+    .bubble1 {
+        width: 60%;
+    }
+    .bubble2 {
+        width: 80%;
+    }
+}
