@@ -37,7 +37,7 @@ p {
 .absolute-text {
     z-index: 10;
     position: absolute;
-    font-size: 2rem;
+    font-size: 16px;
     color: rgb(19, 18, 18);
     top: 40%;
     left: 30%;
@@ -128,9 +128,6 @@ p {
 
 @media only screen and (max-width: 800px) {
     /************** -STARTSIDA- ****************/
-    body {
-        font-size: 16px;
-    }
     .absolute-text {
         font-size: 1rem;
         top: 40%;
