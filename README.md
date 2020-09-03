@@ -3,7 +3,7 @@
 Webbplats för Frukteriet. 
 
 ```
-Idejäsning pågår.
+Idéjäsning pågår.
 ```
 :yum:
 
