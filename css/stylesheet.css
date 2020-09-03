@@ -37,7 +37,7 @@ p {
 .absolute-text {
     z-index: 10;
     position: absolute;
-    font-size: 16px;
+    font-size: 2rem;
     color: rgb(19, 18, 18);
     top: 40%;
     left: 30%;
