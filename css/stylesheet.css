@@ -129,7 +129,6 @@ p {
 @media only screen and (max-width: 800px) {
     /************** -STARTSIDA- ****************/
     .absolute-text {
-        font-size: 1rem;
         top: 40%;
         left: 10%;
         right: 10%;
