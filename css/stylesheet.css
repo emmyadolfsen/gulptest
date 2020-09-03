@@ -1,9 +1,12 @@
+html {
+    font-size: 62.5%;
+}
+
 body {
     width: 100%;
     margin: auto;
     font-family: 'Righteous', cursive;
     background-color: rgb(166, 114, 190);
-    font-size: 16px;
 }
 
 
@@ -37,7 +40,7 @@ p {
 .absolute-text {
     z-index: 10;
     position: absolute;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: rgb(19, 18, 18);
     top: 40%;
     left: 30%;
@@ -56,15 +59,12 @@ p {
 @-webkit-keyframes pulsate {
     0% {
         opacity: 0.5;
-        font-size: 1.8rem;
     }
     50% {
         opacity: 1.0;
-        font-size: 1.85rem;
     }
     100% {
         opacity: 0.5;
-        font-size: 1.8rem;
     }
 }
 
