@@ -4,6 +4,7 @@ const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
+const htmlmin = require('gulp-htmlmin');
 
 
 // Sökvägar
@@ -11,16 +12,19 @@ const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/**/*.css",
     jsPath: "src/**/*.js",
-    imagePath: "src/images/*"
+    imagePath: "src/images/*",
+    htmlmin: "src/*.html"
 }
 
-// Kopiera html-filer
-function copyHTML() {
+// Minifiera html-filer och kopiera
+function htmlTask() {
     return src(files.htmlPath)
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest('pub'));
 }
 
-// minifiera med imagemin
+
+// Minifiera med imagemin och kopiera
 function imageTask() {
     return src(files.imagePath)
         .pipe(imagemin())
@@ -45,13 +49,13 @@ function cssTask() {
 
 // Watcher, håller koll på om någon av filerna ändras
 function watchTask() {
-    watch([files.htmlPath, files.jsPath, files.cssPath],
-        parallel(copyHTML, imageTask, cssTask, jsTask)
+    watch([files.htmlPath, files.imagePath, files.jsPath, files.cssPath],
+        parallel(htmlTask, imageTask, cssTask, jsTask)
     );
 }
 
 // Kör globalt
 exports.default = series(
-    parallel(copyHTML, imageTask, cssTask, jsTask),
+    parallel(htmlTask, imageTask, cssTask, jsTask),
     watchTask
-);
+)
