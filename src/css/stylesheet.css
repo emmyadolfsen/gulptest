@@ -89,6 +89,9 @@ button {
     color: rgb(19, 18, 18);
 }
 
+
+/* Pulserande text */
+
 .pulsate {
     -webkit-animation: pulsate 2s ease-out;
     -webkit-animation-iteration-count: infinite;
