@@ -1,6 +1,6 @@
-# Nodejs och Gulp*
+# Nodejs och Gulp
 
-Syftet med en automatiserings-process är att göra jobbet enklare genom automatisering. Filer minifieras ochh läggs till automatiskt.
+Syftet med en automatiserings-process är att göra jobbet enklare genom automatisering. Filer minifieras och läggs till automatiskt.
 
 För att starta projektet och skapa en package.json fil körde jag en **$ npm init** följt av en Gulp installation, **$ npm install --save-dev gulp**.
 
