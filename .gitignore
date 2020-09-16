@@ -1,5 +1,4 @@
 /node_modules
 /pub
 package.json
-package-lock.json
 test.html

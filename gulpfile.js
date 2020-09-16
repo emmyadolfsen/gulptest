@@ -5,6 +5,7 @@ const uglify = require("gulp-uglify-es").default;
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const browserSync = require('browser-sync').create();
 
 
 // Sökvägar
@@ -47,15 +48,22 @@ function cssTask() {
         .pipe(dest('pub/css'));
 }
 
-// Watcher, håller koll på om någon av filerna ändras
+// Watcher och browsersync
 function watchTask() {
-    watch([files.htmlPath, files.imagePath, files.jsPath, files.cssPath],
-        parallel(htmlTask, imageTask, cssTask, jsTask)
-    );
-}
+    browserSync.init({
+        server: {
+            baseDir: './pub/'
+        }
+    });
+
+    watch(files.htmlPath, htmlTask).on('change', browserSync.reload);
+    watch(files.imagePath, imageTask).on('change', browserSync.reload);
+    watch(files.jsPath, jsTask).on('change', browserSync.reload);
+    watch(files.cssPath, cssTask).on('change', browserSync.reload);
+};
 
 // Kör globalt
 exports.default = series(
-    parallel(htmlTask, imageTask, cssTask, jsTask),
+    parallel(htmlTask, imageTask, jsTask),
     watchTask
 )
